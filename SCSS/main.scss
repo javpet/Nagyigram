@@ -1,0 +1,114 @@
+// CSS CUSTOMIZED RESET
+@import "_reset.scss";
+@import "_mediaqueries.scss";
+
+// VARIABLES
+$white: #fff;
+$primary: #232323;
+$background-color: #fafafa;
+$border-color: rgba(0, 0, 0, 0.0975);
+
+// MIXINS
+@mixin profile-pic {
+	height: 32px;
+	width: 32px;
+	margin-right: 8px;
+	border-radius: 50%;
+}
+
+// MAIN STYLING
+:root {
+	font-family: "Lato", sans-serif;
+	color: $primary;
+	background-color: $background-color;
+}
+
+.main-wrapper {
+	width: 100vw;
+	height: 100vh;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav {
+	height: 70px;
+	background-color: $white;
+	border-bottom: 1px solid $border-color;
+
+	.container {
+		justify-content: space-between;
+	}
+
+	.logos,
+	.profile,
+	.profile-header {
+		display: flex;
+		align-items: center;
+	}
+
+	.logo {
+		height: 32px;
+		padding-right: 16px;
+		border-right: 1px solid $border-color;
+	}
+
+	.letterform {
+		padding-top: 2px;
+		height: 32px;
+		padding-left: 16px;
+	}
+
+	.profile-pic {
+		@include profile-pic;
+	}
+}
+
+.photos {
+	width: 45%;
+	margin: 0 auto;
+	padding: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	.photo {
+		width: 480px;
+		height: 100%;
+		background-color: #000;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		background-color: $white;
+		border: 1px solid $border-color;
+		margin-bottom: 32px;
+	}
+
+	.profile-header {
+		height: 70px;
+		width: 100%;
+		align-items: center;
+		display: flex;
+		padding-left: 16px;
+		border-bottom: 1px solid $border-color;
+		.profile-pic {
+			@include profile-pic;
+		}
+	}
+
+	.insta-image img {
+		width: 100%;
+		height: 100%;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+}
